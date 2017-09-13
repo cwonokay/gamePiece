@@ -1,26 +1,11 @@
-//public class Main {
-//    public static void main (String[] args){
-//        GamePiece myGamePiece = new GamePiece();
-//        myGamePiece.move(9,3);
-//
-//        System.out.println(myGamePiece);
-//        System.out.println(myGamePiece.isFrozen());
-//        myGamePiece.freeze();
-//        System.out.println(myGamePiece.isFrozen());
-//        myGamePiece.unfreeze();
-//        myGamePiece.move(3,3);
-//
-//
-//    }
 
-//}
 public class Main {
     public static void main(String[] args) {
         GamePiece myGamePiece = new GamePiece();
 //        Test for move
         myGamePiece.move(5,2);
         if(myGamePiece.getPositionX() == 5 && myGamePiece.getPositionY()==2){
-            System.out.println("SUCCESS: You moved!!");
+            System.out.println("SUCCESS: You moved" + " " + myGamePiece.getPositionX() + " " + myGamePiece.getPositionY());
         } else {
             System.out.println("FAILURE: You didn't moved");
         }
@@ -29,6 +14,19 @@ public class Main {
             System.out.println("SUCCESS: Your Frozen");
         } else {
             System.out.println("FAILURE: Your Not Frozen");
+        }
+        myGamePiece.move(4,7);
+        if(myGamePiece.isFrozen() == true){
+            System.out.println("SUCCESS: Your frozen You Can't Move");
+        } else {
+            System.out.println("FAILURE: Your You");
+        }
+
+        myGamePiece.unfreeze();
+        if (myGamePiece.isFrozen() == false){
+            System.out.println("SUCCESS: Your not Frozen");
+        } else {
+            System.out.println("FAILURE: Your Frozen");
         }
 
         // Test that the default color is what we expect
